@@ -1,74 +1,121 @@
+
+
+
+
 //Bai tap 1:
-document.getElementById("salary").onclick = function () {
-  //input:
-  var earn = document.getElementById("earn").value;
-  var workingDay = document.getElementById("workingDay").value;
-  //output:
-  var total = "";
+document.getElementById("arrange").onclick = function (){
+ //input:
+  var num1 = document.getElementById("num1").value*1;
+  var num2 = document.getElementById("num2").value*1;
+  var num3 = document.getElementById("num3").value*1;
   //process:
-  total = " Tiền lương là: " + earn * workingDay + " vnd";
-  document.getElementById("showSalary").innerHTML = total;
-  // document.getElementById('showSalary').className='fa fa-hand-point-right ms-3';
-};
+  var pos1=0;
+  var pos2=0;
+  var pos3=0;
+
+  if(num1>num2&&num1>num3&&num2>num3){
+  pos1=num3;
+  pos2=num2;
+  pos3=num1;
+  }else if(num1>num2&&num1>num3&&num2<num3){
+    pos1=num2;
+    pos2=num3;
+    pos3=num1;
+  }else if(num1>num2&&num1<num3){
+    pos2=num1;
+    pos3=num3;
+    pos1=num2;
+  }else if(num1<num2&&num1<num3&&num2<num3){
+    pos1=num1;
+    pos2=num2;
+    pos3=num3;
+  }else if(num2>num1&&num2>num3&&num1>num3){
+ pos3=num2;
+ pos2=num1;
+ pos1=num3;
+  }else{
+    pos1=num1;
+    pos2=num3;
+    pos3=num2;
+  }
+//output:
+var result = "<p> Số thứ tự tăng dần: " + pos1 + "<" + pos2 + "<" + pos3 +"</p>";
+document.getElementById("showArrange").innerHTML = result;
+  }
 
 //Bai tap 2:
-document.getElementById("average").onclick = function () {
+document.getElementById("sayWelcome").onclick = function () {
   //input:
-  var number1 = document.getElementById("number1").value;
-  var number2 = document.getElementById("number2").value;
-  var number3 = document.getElementById("number3").value;
-  var number4 = document.getElementById("number4").value;
-  var number5 = document.getElementById("number5").value;
-  //output:
-  var average = "";
+  var family = document.getElementById("family").value;
   //process:
-  var sum =
-    parseInt(number1) +
-    parseInt(number2) +
-    parseInt(number3) +
-    parseInt(number4) +
-    parseInt(number5);
-  average = "Trung bình cộng là: " + sum / 5;
-  document.getElementById("showAverage").innerHTML = average;
+  var famSelect="";
+  if(family=="dad"){
+    famSelect = "Bố";
+  }else if(family=="mom"){
+    famSelect = "Mẹ";
+  }else if(family=="brother"){
+    famSelect = "Anh trai";
+  }else{
+    famSelect = "Em gái";
+  }
+  //output:
+  document.getElementById("welcome").innerHTML = "<p>Chào " +famSelect;
 };
 //Bai tap 3:
-document.getElementById("exchange").onclick = function () {
+document.getElementById("count").onclick = function(){
   //input:
-  var moneyInput = document.getElementById("moneyInput").value;
+  var numb1 = document.getElementById("numb1").value*1;
+  var numb2 = document.getElementById("numb2").value*1;
+  var numb3 = document.getElementById("numb3").value*1;
   //process:
-  var exchange = moneyInput * 23500;
-  //output:
+  var even = 0;
+  var odd = 0;
 
-  document.getElementById("showExchange").innerHTML = "Số tiền đổi được: " +  new Intl.NumberFormat("vn-VN").format(exchange) + " vnd";
+if(numb1 % 2 > 0 && numb2%2>0&&numb3%2>0 ){
+  odd=3;
+  even=0;
+}else if((numb1%2>0&&numb2%2>0&&numb3%2<=0)||(numb1%2>0&&numb2%2<=0&&numb3%2>0)||(numb1%2<=0&&numb2%2>0&&numb3%2>0)){
+  odd=2;
+  even=1;
+}else if ((numb1%2>0&&numb2%2<=0&&numb3%2<=0)||(numb1%2<=0&&numb2%2>0&&numb3%2<=0)||(numb1%2<=0&&numb2%2<=0&&numb3%2>0)){
+  odd=1;
+  even=2;
+}else{
+  odd=0;
+  even=3;
+}
 
+
+//output:
+  var result = "<p> Có "+even+" số chẵn "+ odd +" số lẻ</p>";
   
-};
-//Bai tap 4:
-document.getElementById("calc").onclick = function () {
-  //input:
-  var heighInput = document.getElementById("heighInput").value;
-  var widthInput = document.getElementById("widthInput").value;
+document.getElementById("showCount").innerHTML = result;
+}
 
 
-  //process:
-  var perimeter = (parseInt(heighInput) + parseInt(widthInput)) * 2;
-  var area = heighInput * widthInput;
-  //output:
-  var showResult = "";
-  showResult +=  "<p> chu vi là:  " + perimeter +"</p>";
-  showResult += "<p> diện tích là: " + area +"</p>";
-  document.getElementById("showResult").innerHTML = showResult;
-};
-//Bai tap 5:
-document.getElementById("solution").onclick = function () {
-  //Input:
-  var numberInput = document.getElementById("numberInput").value*1;
+//Bài tập 4
+document.getElementById("guess").onclick = function(){
+  //input
+  var length1 = document.getElementById("length1").value*1;
+  var length2 = document.getElementById("length2").value*1;
+  var length3 = document.getElementById("length3").value*1;
 
-  //process:
-  var sum =numberInput % 10 + Math.floor(numberInput / 10);
-  var twoNumber = "Tổng 2 ký số là: "+ sum  ;
+  //process
+  var square ="tam giác vuông";
+  var even ="tam giác đều";
+  var balance ="tam giác cân";
+  var other = "tam giác khác";
+  var type="";
+  if((length1==length2)&&(length1==length3)){
+  type=even;
+  }else if((length1==length2&&length1!==length3)||(length1==length3&&length1!==length2)||(length2==length3&&length2!==length1)){
+    type=balance;
+  }else if((length1%3==0&&length2%4==0&&length3%5==0)||(length1%3==0&&length2%5==0&&length3%4==0)||(length1%4==0&&length2%3==0&&length3%5==0)||(length1%4==0&&length2%3==0&&length3%5==0)||(length1%4==0&&length2%5==0&&length3%3==0)||(length1%5==0&&length2%4==0&&length3%3==0)){
+type=square;
+  }else {
+    type=other;
+  }
+  //output
 
-
-  //output:
-  document.getElementById("twoNumer").innerHTML = twoNumber;
-};
+  document.getElementById("showType").innerHTML ="Đây là " + type;
+}

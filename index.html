@@ -16,88 +16,225 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div class="baitap">
-    <div class="d-flex align-items-start">
-      <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fa fa-book me-1"></i>Bài 1</button>
-        <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fa fa-book me-1"></i>Bài 2</button>
-        <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fa fa-book me-1"></i>Bài 3</button>
-        <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fa fa-book me-1"></i>Bài 4</button>
-        <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings1" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fa fa-book me-1"></i>Bài 5</button>
+      <div class="d-flex align-items-start">
+        <div
+          class="nav flex-column nav-pills me-3"
+          id="v-pills-tab"
+          role="tablist"
+          aria-orientation="vertical"
+        >
+          <button
+            class="nav-link active"
+            id="v-pills-home-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#v-pills-home"
+            type="button"
+            role="tab"
+            aria-controls="v-pills-home"
+            aria-selected="true"
+          >
+            <i class="fa fa-book me-1"></i>Bài 1
+          </button>
+          <button
+            class="nav-link"
+            id="v-pills-profile-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#bai2"
+            type="button"
+            role="tab"
+            aria-controls="v-pills-profile"
+            aria-selected="false"
+          >
+            <i class="fa fa-book me-1"></i>Bài 2
+          </button>
+          <button
+            class="nav-link"
+            id="v-pills-messages-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#bai3"
+            type="button"
+            role="tab"
+            aria-controls="v-pills-messages"
+            aria-selected="false"
+          >
+            <i class="fa fa-book me-1"></i>Bài 3
+          </button>
+          <button
+            class="nav-link"
+            id="v-pills-settings-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#bai4"
+            type="button"
+            role="tab"
+            aria-controls="v-pills-settings"
+            aria-selected="false"
+          >
+            <i class="fa fa-book me-1"></i>Bài 4
+          </button>
+          <!-- <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings1" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fa fa-book me-1"></i>Bài 5</button> -->
+        </div>
+        <!-- tao them button luu y data-bs-target và id phan content giong nhau -->
+        <div class="tab-content" id="v-pills-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="v-pills-home"
+            role="tabpanel"
+            aria-labelledby="v-pills-home-tab"
+          >
+            <div>
+              <p class="mt-2 ms-2 fs-4 fw-bold">Sắp xếp số thứ tự tăng dần</p>
+              <input
+                id="num1"
+                class="ms-3 mt-3"
+                type="number"
+                placeholder="nhập số thứ 1"
+              />
+              <br />
+              <input
+                id="num2"
+                class="ms-3 mt-3"
+                type="number"
+                placeholder="nhập số thứ 2"
+              />
+              <br />
+              <input
+                id="num3"
+                class="ms-3 mt-3"
+                type="number"
+                placeholder="nhập số thứ 3"
+              />
+              <br />
+              <br />
+              <button id="arrange" class="btn btn-primary rounded-pill ms-3" >
+                Sắp xếp
+              </button>
+              <br />
+              <br />
+              <div class="mt-2 ms-2" id="showArrange"></div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="bai2"
+            role="tabpanel"
+            aria-labelledby="v-pills-profile-tab"
+          >
+            <div>
+              <p class="mt-2 ms-2 fs-4 fw-bold">Chương trình chào hỏi</p>
+              <p class="ms-2">Mời chọn thành viên trong gia đình</p>
+              <select class="ms-2" id="family">
+                <option value="dad">Bố</option>
+                <option value="mom">Mẹ</option>
+                <option value="brother">Anh trai</option>
+                <option value="sister">Em gái</option>
+              </select>
+             
+              
+              <br />
+              <button
+                id="sayWelcome"
+                class="btn btn-primary rounded-pill ms-3 mt-3"
+                
+              >
+                Gửi lời chào
+              </button>
+              <br />
+              <p class="ms-2 mt-3"id="welcome"></p>
+            </div>
+          </div>
+
+          <div
+          class="tab-pane fade "
+          id="bai3"
+          role="tabpanel"
+          aria-labelledby="v-pills-home-tab"
+        >
+          <div>
+            <p class="mt-2 ms-2 fs-4 fw-bold">Đếm số chẵn lẻ</p>
+            <input
+              id="numb1"
+              class="ms-3 mt-3"
+              type="number"
+              placeholder="nhập số thứ 1"
+            />
+            <br />
+            <input
+              id="numb2"
+              class="ms-3 mt-3"
+              type="number"
+              placeholder="nhập số thứ 2"
+            />
+            <br />
+            <input
+              id="numb3"
+              class="ms-3 mt-3"
+              type="number"
+              placeholder="nhập số thứ 3"
+            />
+            <br />
+            <br />
+            <button id="count" class="btn btn-primary rounded-pill ms-3" >
+             Đếm
+            </button>
+            <br />
+            <br />
+            <div class="mt-2 ms-2" id="showCount"></div>
+          </div>
+          
+        </div>
+        <div
+        class="tab-pane fade "
+        id="bai4"
+        role="tabpanel"
+        aria-labelledby="v-pills-home-tab"
+      >
+        <div>
+          <p class="mt-2 ms-2 fs-4 fw-bold">Dự đoán loại tam giác</p>
+          <input
+            id="length1"
+            class="ms-3 mt-3"
+            type="number"
+            placeholder="nhập độ dài thứ 1"
+          />
+          <br />
+          <input
+            id="length2"
+            class="ms-3 mt-3"
+            type="number"
+            placeholder="nhập độ dài thứ 2"
+          />
+          <br />
+          <input
+            id="length3"
+            class="ms-3 mt-3"
+            type="number"
+            placeholder="nhập độ dài thứ 3"
+          />
+          <br />
+          <br />
+          <button id="guess" class="btn btn-primary rounded-pill ms-3" >
+           Dự đoán
+          </button>
+          <br />
+          <br />
+          <div class="mt-2 ms-3 mb-3" id="showType"></div>
+        </div>
+        
       </div>
-      <!-- tao them button luu y data-bs-target và id phan content giong nhau -->
-      <div class="tab-content" id="v-pills-tabContent">
-        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-          <div >
-           
-       <p class="mt-2 ms-2 fs-4 fw-bold"> Tính tiền lương nhân viên:</p>
-            <input id="earn"class="ms-3 mt-3" type="number" placeholder="nhập lương 1 ngày"/>
-            <input id="workingDay" type="number" placeholder="nhập số ngày làm">
-            <br>
-            <br>
-            <button id="salary"class="btn btn-primary rounded-pill ms-3" onclick="showSalary()">Tính lương</button>
-            <br>
-            <br>
-           <p class="mt-2 ms-2" id="showSalary"> </p> 
-       
-        </div>
-        </div>
-        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-          <div>
-            <p class="mt-2 ms-2 fs-4 fw-bold"> Tính giá trị trung bình:</p>
-            <input id="number1"class="ms-3 mt-3" type="number" placeholder="nhập số thứ 1"/>
-            <input id="number2"class="ms-3 mt-3" type="number" placeholder="nhập số thứ 2"/>
-            <input id="number3"class="ms-3 mt-3" type="number" placeholder="nhập số thứ 3"/>
-            <input id="number4"class="ms-3 mt-3" type="number" placeholder="nhập số thứ 4"/>
-            <input id="number5"class="ms-3 mt-3" type="number" placeholder="nhập số thứ 5"/>
-            <br>
-            <button id="average"class="btn btn-primary rounded-pill ms-3 mt-3" onclick="showAverage()">Tính trung bình </button>
-           <br>
-            <p id="showAverage"> </p> 
-        </div>
-        </div>
-        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-          <div>
-            <p class="mt-2 ms-2 fs-4 fw-bold">Quy đổi tiền:</p>
-            <input id="moneyInput"class="ms-3 mt-3" type="number" placeholder="nhập số tiền cần đổi"/>
-            <br>
-            <button id="exchange"class="btn btn-primary rounded-pill ms-3 mt-3" onclick="showExchange()">Quy đổi tiền</button>
-           <br>
-            <p class="mt-3 ms-3" id="showExchange"> </p> 
-        </div>
-        </div>
-        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-          <div>
-            <p class="mt-2 ms-2 fs-4 fw-bold">Tính diện tích, chu vi hình chữ nhật:</p>
-            <input id="heighInput"class="ms-3 mt-3" type="number" placeholder="nhập chiều dài"/>
-            <input id="widthInput"class="ms-3 mt-3" type="number" placeholder="nhập chiều rộng"/>
-            <br>
-            <button id="calc" class="btn btn-primary rounded-pill ms-3 px-5 mt-3" onclick="showResult()">Tính</button>
-           <br>
-            <div class="mt-3 ms-3" id="showResult">
-               </div> 
-        </div>
-        </div>
-        <div class="tab-pane fade" id="v-pills-settings1" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-          <div>
-            <p class="mt-2 ms-2 fs-4 fw-bold"> Tính tổng 2 ký số:</p>
-            <input id="numberInput"class="ms-3 mt-3" type="number" placeholder="nhập số có hai chữ số"/>
-    <button id="solution"class="btn btn-primary rounded-pill ms-3" onclick="twoNumer()">Tính tổng</button>
-   <br>
-    <p  class="mt-3 ms-3" id="twoNumer"> </p> 
-</div>
-        </div>
       </div>
     </div>
-  </div>
 
-
-
-    
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
